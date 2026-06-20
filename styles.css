@@ -828,55 +828,6 @@ section {
   object-fit: contain;
 }
 
-.video-unmute {
-  position: absolute;
-  bottom: 1.75rem;
-  right: 1.75rem;
-  z-index: 2;
-  border: none;
-  cursor: pointer;
-  padding: 0.55rem 1rem;
-  border-radius: 999px;
-  font-family: inherit;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
-  box-shadow: 0 4px 16px rgba(92, 18, 40, 0.3);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.video-unmute:hover {
-  transform: scale(1.04);
-  background: var(--maroon-soft);
-}
-
-.video-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  aspect-ratio: 16 / 9;
-  border-radius: calc(var(--radius) - 8px);
-  background:
-    linear-gradient(145deg, rgba(168, 50, 82, 0.18), rgba(92, 18, 40, 0.1)),
-    var(--maroon-pale);
-  color: var(--maroon-soft);
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.video-placeholder span {
-  font-size: 2.5rem;
-  opacity: 0.65;
-}
-
-.video-placeholder p {
-  line-height: 1.5;
-  font-size: 0.95rem;
-}
-
 .finale {
   padding-bottom: 3rem;
 }

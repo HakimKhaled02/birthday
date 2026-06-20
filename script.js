@@ -34,6 +34,7 @@ passwordForm.addEventListener("submit", (e) => {
   if (passwordInput.value === CONFIG.password) {
     passwordError.hidden = true;
     unlockSite();
+    enableVideoSound();
   } else {
     passwordError.hidden = false;
     passwordInput.value = "";
@@ -162,26 +163,26 @@ document.addEventListener("keydown", (e) => {
 
 // --- Birthday video ---
 const birthdayVideo = document.getElementById("birthday-video");
-const videoUnmute = document.getElementById("video-unmute");
 const videoFrame = document.getElementById("video-frame");
+let videoSoundEnabled = false;
 
-birthdayVideo.addEventListener("loadeddata", () => {
-  videoUnmute.hidden = false;
-  birthdayVideo.play().catch(() => {});
-});
-
-videoUnmute.addEventListener("click", () => {
+function enableVideoSound() {
+  if (videoSoundEnabled) return;
+  videoSoundEnabled = true;
   birthdayVideo.muted = false;
-  videoUnmute.hidden = true;
+}
+
+function playVideoWithSound() {
+  enableVideoSound();
   birthdayVideo.play().catch(() => {});
-});
+}
 
 const videoObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         videoFrame.classList.add("visible");
-        birthdayVideo.play().catch(() => {});
+        playVideoWithSound();
       }
     });
   },
@@ -291,6 +292,7 @@ document.getElementById("open-surprise").addEventListener("click", () => {
   if (heroRevealed) return;
   heroRevealed = true;
 
+  enableVideoSound();
   spawnConfetti(140);
   heroGate.classList.add("gate-out");
 
