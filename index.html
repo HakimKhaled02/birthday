@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="password-gate" id="password-gate">
+    <div class="password-card">
+      <p class="password-eyebrow">just for you</p>
+      <h2 class="password-title">Enter the secret code</h2>
+      <p class="password-hint">A little password before your surprise ♥</p>
+      <form class="password-form" id="password-form">
+        <input
+          type="password"
+          id="password-input"
+          class="password-input"
+          inputmode="numeric"
+          autocomplete="off"
+          placeholder="•••••••"
+          aria-label="Password"
+        />
+        <button type="submit" class="password-submit">Enter</button>
+      </form>
+      <p class="password-error" id="password-error" hidden>Wrong password — try again 💕</p>
+    </div>
+  </div>
+
+  <canvas id="confetti"></canvas>
+  <div class="hearts-bg" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-gate" id="hero-gate">
+        <button class="gift-trigger" id="open-surprise" type="button" aria-label="Open your surprise">
+          <span class="gift-box" aria-hidden="true">
+            <span class="gift-lid">🎀</span>
+            <span class="gift-body">🎁</span>
+          </span>
+          <span class="gift-hint">Tap to open your surprise</span>
+          <span class="gift-subhint">Something special is waiting for you</span>
+        </button>
+      </div>
+
+      <div class="hero-inner hero-inner--hidden" id="hero-content">
+        <h1 class="hero-title">
+          <span class="line reveal-item">Happy Birthday,</span>
+          <span class="line name reveal-item" id="her-name">Beautiful</span>
+        </h1>
+        <p class="hero-love reveal-item" id="hero-love"></p>
+        <p class="hero-sub reveal-item" id="hero-date"></p>
+        <p class="hero-tap-hint reveal-item">tap anywhere for hearts ♥</p>
+      </div>
+
+      <div class="scroll-hint scroll-hint--hidden" id="scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="section-text">
+        <h2>Gallery of our moments</h2>
+        <p>Every picture holds a little piece of us</p>
+      </div>
+      <div class="moment-grid" id="moment-grid"></div>
+    </section>
+
+    <section class="video-section" id="video-section">
+      <div class="section-text">
+        <h2>you are my favourite person</h2>
+      </div>
+      <div class="video-frame" id="video-frame">
+        <video
+          id="birthday-video"
+          src="images/video.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+        ></video>
+        <button class="video-unmute" id="video-unmute" type="button" hidden>
+          Tap for sound 🔊
+        </button>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="finale-card">
+        <div class="cake" aria-hidden="true">🎂</div>
+        <h2>Make a wish, love</h2>
+        <p class="finale-message" id="finale-message"></p>
+        <button class="btn-heart" id="burst-hearts" aria-label="Send hearts">
+          <span>Send you all my love</span>
+          <span class="heart-icon">💗</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p id="signature">Sincerely: Amirul Hakim</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <figure class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="" />
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
